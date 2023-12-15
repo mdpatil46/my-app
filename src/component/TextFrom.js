@@ -46,6 +46,7 @@ import React, { useState } from 'react'
 
   return (
     <>
+    <h2>Write Your Text Here</h2>
       <div className="container"></div>
       <h1>{prop.heading} </h1>
       <div className="mb-3">
