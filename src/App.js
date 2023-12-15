@@ -1,6 +1,7 @@
 
 import './App.css';
 import About from './component/About';
+import Calculator from './component/Calculator';
 import Navbar from './component/Navbar';
 import TextForm from './component/TextFrom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -12,6 +13,7 @@ function App() {
     <div className="container my-3" >
     <Routes>
    <Route path="/textForm" element={<TextForm/>}/>
+   <Route path="/calculator" element={<Calculator/>}/>
     <Route path="/about"  element={<About/>} />
     </Routes>
     </div>

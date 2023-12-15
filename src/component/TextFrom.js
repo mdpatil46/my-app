@@ -55,7 +55,7 @@ import React, { useState } from 'react'
         <button className="btn btn-primary mx-2" onClick={MyUcamelclick}> Convert Upper Camel </button>
         <button className="btn btn-primary mx-2" onClick={MyRemoveclick}>Remove Extra Spaces </button>
         <button className="btn btn-primary mx-2" onClick={MyCopyclick}>Copy Text </button>
-        <button className="btn btn-primary mx-2" onClick={MyClearclick}>Clear</button>
+        <button className="btn btn-outline-danger mx-2" onClick={MyClearclick}>Clear</button>
 
 
 
