@@ -4,7 +4,7 @@ function DefaultPage() {
   return (
    <> 
    
-   <h1>hey this is default or index page </h1>
+   <h1>This is simpel React.js Project </h1>
 
     </>
   )

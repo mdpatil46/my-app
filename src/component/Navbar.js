@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
+  const [menu, setMenu] = useState(false);
+  const [dark, setDark] = useState(false)
+
+  const closeMenu = () => {
+    setMenu(false);
+  };
+
+  const myDark = () => {
+    setDark(!dark)
+  }
+  
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+   
+    <nav className={`navbar navbar-expand-lg ${dark ? `navbar-dark bg-dark` : `navbar-light bg-light`} `} >
     <div className="container">
       <Link className="navbar-brand" to="/">
-       <span className="font-weight-bold fs-3"> {props.title}</span>
+        <span className="font-weight-bold fs-3">{props.title}</span>
       </Link>
       <button
         className="navbar-toggler"
@@ -17,28 +30,33 @@ export default function Navbar(props) {
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        onClick={() => setMenu(!menu)}
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <div className={`collapse navbar-collapse${menu ? " show" : ""}`} id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/textForm">
+            <Link className="nav-link" to="/textForm" onClick={closeMenu}>
               <span className="text-warning">Text Area</span>
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/calculator">
+            <Link className="nav-link" to="/calculator" onClick={closeMenu}>
               <span className="text-warning">Calculator</span>
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">
+            <Link className="nav-link" to="/about" onClick={closeMenu}>
               <span className="text-warning">{props.about}</span>
             </Link>
           </li>
         </ul>
       </div>
+      <div className="form-check form-switch">
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={myDark}/>
+  <label className={`form-check-label ${dark ?`text-white`:`text-darl`}`} htmlForfor="flexSwitchCheckDefault">Enable Dark Mode</label>
+</div>
     </div>
   </nav>
   );
