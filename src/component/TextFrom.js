@@ -49,11 +49,12 @@ function TextForm(props) {
   
   return (
     <>
-      <div className={`continer my-3 ${props.darkmode ? "dark-mode" : ""}`}>
+      <div className={`continer my-3 ${props.darkmode ? "bg-dark":"bg-light"}`}>
+        {console.log(props.darkmode)}
     
         <h2>Write Your Text Here</h2>
         <div className="container"></div>
-        {/* <h1>{prop.heading} </h1> */}
+        
         <div className="mb-3">
           <textarea
             className="form-control"
