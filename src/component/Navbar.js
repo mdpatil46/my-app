@@ -4,20 +4,19 @@ import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const [menu, setMenu] = useState(false);
-  const [dark, setDark] = useState(false)
+  const [darkmode, setDarkmode] = useState(false)
 
   const closeMenu = () => {
     setMenu(false);
   };
 
   const myDark = () => {
-    setDark(!dark)
+    setDarkmode(!darkmode)
   }
   
-
   return (
    
-    <nav className={`navbar navbar-expand-lg ${dark ? `navbar-dark bg-dark` : `navbar-light bg-light`} `} >
+    <nav className={`navbar navbar-expand-lg ${darkmode ? `navbar-dark bg-dark` : `navbar-light bg-light`} `} >
     <div className="container">
       <Link className="navbar-brand" to="/">
         <span className="font-weight-bold fs-3">{props.title}</span>
@@ -55,12 +54,14 @@ export default function Navbar(props) {
       </div>
       <div className="form-check form-switch">
   <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={myDark}/>
-  <label className={`form-check-label ${dark ?`text-white`:`text-darl`}`} htmlForfor="flexSwitchCheckDefault">Enable Dark Mode</label>
+  <label className={`form-check-label ${darkmode ?`text-white`:`text-darl`}`} htmlForfor="flexSwitchCheckDefault">Enable Dark Mode</label>
 </div>
     </div>
   </nav>
+
   );
 }
+
 
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,

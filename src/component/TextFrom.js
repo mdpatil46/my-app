@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function TextForm(prop) {
+function TextForm(props) {
   function Myupclick() {
     // console.log("Uppercase was click" + Text)
     let newtext = Text.toUpperCase();
@@ -46,20 +46,11 @@ function TextForm(prop) {
   const [Text, setText] = useState("");
   // setText("Hello");
 
-  const [mode, setMode]= useState(false)
-
-  function myMode (){
-    setMode(!mode)
-  }
-
-
+  
   return (
     <>
-      <div className={mode?`bg-dark`:`bg-light`}>
-      <div className="form-check form-switch">
-  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={myMode}/>
-  <label className={`form-check-label ${mode ?`text-white`:`text-darl`}`} htmlForfor="flexSwitchCheckDefault">Enable Dark Mode</label>
-</div>
+      <div className={`continer my-3 ${props.darkmode ? "dark-mode" : ""}`}>
+    
         <h2>Write Your Text Here</h2>
         <div className="container"></div>
         {/* <h1>{prop.heading} </h1> */}
