@@ -55,12 +55,12 @@ function TextForm(props) {
   
   return (
     <>
-<<<<<<< HEAD
-      <div className={`continer my-3 ${ myDarkmode ?'bg-dark':'bg-light'}`}>
-=======
-      <div className={`continer my-3 ${props.darkmode ? "bg-dark":"bg-light"}`}>
-        {console.log(props.darkmode)}
->>>>>>> 79108164f5cdaba9fe84b32147ebb83ff4ade82a
+
+      {/* <div className={`continer my-3 ${ myDarkmode ?'bg-dark':'bg-light'}`}> */}
+
+      <div className={`my-3 ${myDarkmode ? "bg-dark":"bg-light"}`}>
+        
+
     
         <h2 className={myDarkmode?'text-white':'text-black'}>Write Your Text Here</h2>
         <div className="container"></div>
@@ -107,6 +107,7 @@ function TextForm(props) {
           <p className={myDarkmode?'text-white':'text-black'}>{Text}</p>
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 }
