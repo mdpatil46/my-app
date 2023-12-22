@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import { useSelector } from "react-redux";
+
+
+
 
 
 function TextForm(props) {
@@ -46,12 +50,14 @@ function TextForm(props) {
   const [Text, setText] = useState("");
   // setText("Hello");
 
+  const myDarkmode = useSelector((state)=>state.counter.darkMode);
+  
   
   return (
     <>
-      <div className={`continer my-3 ${props.darkmode ? "dark-mode" : ""}`}>
+      <div className={`continer my-3 ${ myDarkmode ?'bg-dark':'bg-light'}`}>
     
-        <h2>Write Your Text Here</h2>
+        <h2 className={myDarkmode?'text-white':'text-black'}>Write Your Text Here</h2>
         <div className="container"></div>
         {/* <h1>{prop.heading} </h1> */}
         <div className="mb-3">
@@ -88,12 +94,12 @@ function TextForm(props) {
           </button>
         </div>
         <div className="container my-4">
-          <h2>Your Text Summary</h2>
-          <p>
+          <h2 className={myDarkmode?'text-white':'text-black'}>Your Text Summary</h2>
+          <p className={myDarkmode?'text-white':'text-black'}>
             {Text.split(" ").length} Word {Text.length} Caracters
           </p>
-          <h4>Preview</h4>
-          <p>{Text}</p>
+          <h4 className={myDarkmode?'text-white':'text-black'}>Preview</h4>
+          <p className={myDarkmode?'text-white':'text-black'}>{Text}</p>
         </div>
       </div>
     </>

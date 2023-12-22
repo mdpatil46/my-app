@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleDarkmode } from "../reduxSlice/mySlice";
+
 
 export default function Navbar(props) {
   const [menu, setMenu] = useState(false);
   const [darkmode, setDarkmode] = useState(false)
-
+  const dispatch = useDispatch()
   const closeMenu = () => {
     setMenu(false);
   };
 
   const myDark = () => {
+  dispatch(toggleDarkmode(darkmode))
     setDarkmode(!darkmode)
   }
   
@@ -54,7 +58,7 @@ export default function Navbar(props) {
       </div>
       <div className="form-check form-switch">
   <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={myDark}/>
-  <label className={`form-check-label ${darkmode ?`text-white`:`text-darl`}`} htmlForfor="flexSwitchCheckDefault">Enable Dark Mode</label>
+  <label className={`form-check-label ${darkmode ?`text-white`:`text-darl`}`} htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
 </div>
     </div>
   </nav>

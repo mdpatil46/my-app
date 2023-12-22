@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 function Calculator() {
  
@@ -16,6 +17,8 @@ function Calculator() {
     function clearinput() {
         document.getElementById('myinput').value = '';
     }
+
+    const myDarkMode = useSelector((state)=>state.counter.darkMode)
 
   return (
     <>
@@ -42,7 +45,7 @@ function Calculator() {
         <button onClick={claculateValue}>=</button>
       </div> */}
 
-<div className="container  d-flex align-items-center justify-content-center vh-90 ">
+<div className={`container  d-flex align-items-center justify-content-center vh-90 ${myDarkMode?'bg-dark':'bg-light'} `}>
     <input type="text" id='myinput' className="form-control border border-dark mb-2"/><br />
     <div className='container m-5'>
     <button className="btn btn-secondary btn-circle m-2 " onClick={clearinput}>AC</button>

@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function About() {
+
+  const myDarkMode = useSelector((state)=>state.counter.darkMode)
   return (
     <>
-      <div className="container my-3">
+      <div className={`container my-5 ${myDarkMode ? 'bg-dark':'bg-light'}`}>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header">
@@ -20,11 +23,12 @@ function About() {
             </h2>
             <div
               id="collapseOne"
-              className="accordion-collapse collapse show"
+              className={`accordion-collapse collapse show" ${myDarkMode?'text-white':'text-black'}`}
               data-bs-parent="#accordionExample"
+              
             >
-              <div className="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is
+              <div className={`accordion-body ${myDarkMode?'bg-dark':'bg-light'} ` }>
+                This is the first item's accordion body. It is
                 shown by default, until the collapse plugin adds the appropriate
                 classNamees that we use to style each element. These classNamees
                 control the overall appearance, as well as the showing and
@@ -51,10 +55,10 @@ function About() {
             </h2>
             <div
               id="collapseTwo"
-              className="accordion-collapse collapse"
+              className={`accordion-collapse collapse show" ${myDarkMode?'text-white':'text-black'}`}
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body">
+              <div className={`accordion-body ${myDarkMode?'bg-dark':'bg-light'} ` }>
                 <strong>This is the second item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classNamees that we use to style each element. These
@@ -82,10 +86,10 @@ function About() {
             </h2>
             <div
               id="collapseThree"
-              className="accordion-collapse collapse"
+              className={`accordion-collapse collapse show" ${myDarkMode?'text-white':'text-black'}`}
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body">
+              <div className={`accordion-body ${myDarkMode?'bg-dark':'bg-light'} ` }>
                 <strong>This is the third item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classNamees that we use to style each element. These
