@@ -15,7 +15,7 @@ export default function Navbar(props) {
 
   const myDark = () => {
   dispatch(toggleDarkmode(darkmode))
-    setDarkmode(!darkmode)
+    setDarkmode(!darkmode )
   }
   
   return (

@@ -6,7 +6,7 @@ function About() {
   const myDarkMode = useSelector((state)=>state.counter.darkMode)
   return (
     <>
-      <div className={`container my-5 ${myDarkMode ? 'bg-dark':'bg-light'}`}>
+      <div className={`container-fuild full-screen-container my-5 ${myDarkMode ? 'bg-dark':'bg-light'}`}>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header">
